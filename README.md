@@ -9,7 +9,7 @@ Design system para React y Tailwind CSS 4. Incluye tokens semánticos con 4 tema
 - 4 temas: `dark`, `light`, `paper` y `violet`.
 - Más de 50 componentes con tipos de TypeScript.
 - Textos del sistema en inglés y español, con posibilidad de sobrescribirlos.
-- Tests de accesibilidad con axe y Storybook con selector de tema e idioma.
+- Tests de accesibilidad con axe y [Storybook publicado](https://shompaa.github.io/kozue-ui/) con selector de tema e idioma.
 
 ## Instalación
 

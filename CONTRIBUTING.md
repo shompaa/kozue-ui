@@ -10,7 +10,7 @@ pnpm run typecheck
 pnpm run build
 ```
 
-Requiere Node 20+ y pnpm 11.
+Requiere Node 20+ y pnpm 11. Al hacer push a `main`, el Storybook se despliega solo en https://shompaa.github.io/kozue-ui/.
 
 ## Antes de abrir un PR
 

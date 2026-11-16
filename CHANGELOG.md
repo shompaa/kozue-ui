@@ -8,6 +8,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/); v
 - Enlaces al repositorio, página de inicio y bugs en `package.json`.
 - Integración continua (typecheck, tests, build del paquete y de Storybook).
 - Guía de contribución.
+- Storybook publicado en GitHub Pages (https://shompaa.github.io/kozue-ui/), con despliegue automático en cada push a `main`.
 
 ## [0.1.0] - 2026-11-16
 
