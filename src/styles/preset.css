@@ -1,0 +1,208 @@
+/* kozue-ui — tailwind-preset (Tailwind 4, CSS). Tokens de 3 temas. */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(:root:not(.light,.paper), :root:not(.light,.paper) *));
+@custom-variant paper (&:where(.paper, .paper *));
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-outline: var(--outline);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-primary-text: var(--primary-text);
+  --color-highlight: var(--highlight);
+  --color-highlight-text: var(--highlight-text);
+  --color-tertiary: var(--tertiary);
+  --color-ink: var(--ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --radius-card: var(--radius);
+  --radius-button: var(--radius-button);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-display: var(--font-display);
+  --font-hand: var(--font-hand);
+  --font-sans: var(--font-sans);
+
+  /* shadcn/ui compat: nombres semanticos que usan los primitivos de src/components/ui */
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--fg);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--fg);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--fg);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--fg-muted);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--fg);
+  --color-destructive: var(--danger);
+  --color-input: var(--outline);
+  --color-ring: var(--highlight-text);
+}
+
+/* Fuentes: fallbacks aca; apps/web inyecta las next/font reales sobre estas vars. */
+:root {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-hand: "Caveat", ui-rounded, "Segoe Print", cursive;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --radius: 1rem;
+  --radius-button: 9999px;
+}
+
+:root,
+.dark {
+  color-scheme: dark;
+  --bg: #02070f;
+  --surface: #0b1622;
+  --surface-2: #101d2a;
+  --border: #24364a;
+  --outline: #5a6b7e;
+  --fg: #f7f3e9;
+  --fg-muted: #b9ae9b;
+  --primary: #d7ff00;
+  --primary-text: #d7ff00;
+  --highlight: #ff4fb3;
+  --highlight-text: #ff4fb3;
+  --tertiary: #d28a4a;
+  --primary-foreground: #02070f;
+  --ink: #f7f3e9;
+  --success: #5fd38a;
+  --warning: #fb9a5a;
+  --danger: #ff6b6b;
+  --info: #6cb6ff;
+}
+
+.light {
+  color-scheme: light;
+  --bg: #f7f3e9;
+  --surface: #fffcf5;
+  --surface-2: #ead9bc;
+  --border: #d6c29d;
+  --outline: #8a735e;
+  --fg: #181311;
+  --fg-muted: #5a4636;
+  --primary: #a82c27;
+  --primary-text: #a82c27;
+  --highlight: #6a3b24;
+  --highlight-text: #6a3b24;
+  --tertiary: #d28a4a;
+  --primary-foreground: #f7f3e9;
+  --ink: #181311;
+  --success: #166534;
+  --warning: #9a3412;
+  --danger: #b42318;
+  --info: #1d5fa8;
+}
+
+.paper {
+  color-scheme: light;
+  --bg: #efe3c8;
+  --surface: #f7eedb;
+  --surface-2: #e2cfa9;
+  --border: #c9b08a;
+  --outline: #7e6650;
+  --fg: #181311;
+  --fg-muted: #4e3a2c;
+  --primary: #a82c27;
+  --primary-text: #a42a25;
+  --highlight: #3b241c;
+  --highlight-text: #3b241c;
+  --tertiary: #d28a4a;
+  --primary-foreground: #f7f3e9;
+  --ink: #181311;
+  --success: #2f5a1a;
+  --warning: #8a3f12;
+  --danger: #a32a1f;
+  --info: #2a5a8a;
+}
+
+/* Tema del portafolio: oscuro violeta, botones de 8px, Inter en todo. */
+.violet {
+  color-scheme: dark;
+  --radius: 0.75rem;
+  --radius-button: 8px;
+  --font-display: "Outfit Variable", "Outfit", system-ui, sans-serif;
+  --font-sans: "Geist Variable", "Geist", system-ui, sans-serif;
+  --bg: #0d0d1c;
+  --surface: #1c1b30;
+  --surface-2: #25223a;
+  --border: #45405f;
+  --outline: #5e4a79;
+  --fg: #f5f2ff;
+  --fg-muted: #d0c8de;
+  --primary: #6e38a9;
+  --primary-foreground: #ffffff;
+  --primary-text: #cd82ff;
+  --highlight: #ad6ff2;
+  --highlight-text: #b56af3;
+  --tertiary: #d9a0ff;
+  --ink: #f5f2ff;
+  --success: #5fd38a;
+  --warning: #fb9a5a;
+  --danger: #ff6b6b;
+  --info: #6cb6ff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Acabados ---- */
+@keyframes kozue-reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: kozue-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 28%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { animation: none; }
+}
+
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+[data-spotlight] { position: relative; }
+[data-spotlight]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--highlight) 85%, transparent), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+[data-spotlight]:hover::before { opacity: 1; }
